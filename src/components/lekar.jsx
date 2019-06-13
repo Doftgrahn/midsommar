@@ -18,15 +18,17 @@ const Lekar = ({user}) => {
     }, []);
 
     const addLekar = () => {
-        const data = {
-            lek: lekInput,
-            user: user.displayName,
-            userId: user.uid,
-            photo: user.photoURL
-        };
-        const dbRef = db.collection("lekar").doc();
-        dbRef.set(data).then(() => console.log("yo!"));
-        setLekInput("");
+        if (lekInput) {
+            const data = {
+                lek: lekInput,
+                user: user.displayName,
+                userId: user.uid,
+                photo: user.photoURL
+            };
+            const dbRef = db.collection("lekar").doc();
+            dbRef.set(data).then(() => console.log("yo!"));
+            setLekInput("");
+        }
     };
 
     const taBortLekar = lek => {
@@ -49,7 +51,7 @@ const Lekar = ({user}) => {
                 value={lekInput}
                 onChange={event => setLekInput(event.target.value)}
             />
-            <button onClick={addLekar}>Lägg till lek</button>
+            <button onClick={addLekar} disabled={lekInput? false: true}>Lägg till lek</button>
 
             <div>
                 <ul>

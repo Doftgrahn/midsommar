@@ -20,15 +20,17 @@ const Snapsvisor = ({user}) => {
     }, []);
 
     const addVisa = () => {
-        const visaData = {
-            song: input,
-            user: user.displayName,
-            userId: user.uid,
-            photo: user.photoURL
-        };
-        const dbRef = db.collection("visor").doc();
-        dbRef.set(visaData).then(() => console.log("yoyo"));
-        setInput('');
+        if (input) {
+            const visaData = {
+                song: input,
+                user: user.displayName,
+                userId: user.uid,
+                photo: user.photoURL
+            };
+            const dbRef = db.collection("visor").doc();
+            dbRef.set(visaData).then(() => console.log("yoyo"));
+            setInput("");
+        }
     };
 
     const deleteVisa = song => {
@@ -50,7 +52,7 @@ const Snapsvisor = ({user}) => {
                 value={input}
                 onChange={event => setInput(event.target.value)}
             />
-            <button onClick={addVisa}>Lägg till visa!</button>
+            <button onClick={addVisa} disabled={input ? false: true}>Lägg till visa!</button>
             <div className="visa-wrapper">
                 {visa.map(v => (
                     <div key={v.id}>
