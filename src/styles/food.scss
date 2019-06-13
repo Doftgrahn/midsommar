@@ -1,0 +1,67 @@
+.food {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    .CollectedDishes {
+        border: 1px solid black;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            list-style-type: none;
+        }
+    }
+
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .guestList {
+        border: 1px solid black;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        //flex-wrap: wrap;
+
+        .userinfo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            img {
+                height: 100px;
+                object-fit: contain;
+                border: 1px solid black;
+            }
+
+            h3 {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .dish {
+        //width: 100%;
+        //display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .deleteBtnContainer {
+        //margin-left: auto;
+    }
+}

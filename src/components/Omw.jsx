@@ -37,7 +37,7 @@ const Omw = ({user}) => {
     ));
 
     return (
-        <main>
+        <main className="omw">
             <h1>
                 {findUser
                     ? "Du har bestämt dig för att fira midsommar på bästa sätt!"

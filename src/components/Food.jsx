@@ -19,15 +19,17 @@ const Food = ({user}) => {
     }, []);
 
     const onClickFood = () => {
-        const dishInfo = {
-            dish: food,
-            user: user.displayName,
-            photo: user.photoURL,
-            userId: user.uid
-        };
+        if (food) {
+            const dishInfo = {
+                dish: food,
+                user: user.displayName,
+                photo: user.photoURL,
+                userId: user.uid
+            };
 
-        const dbRef = db.collection("food").doc();
-        dbRef.set(dishInfo).then(() => console.log("success"));
+            const dbRef = db.collection("food").doc();
+            dbRef.set(dishInfo).then(() => console.log("success"));
+        }
     };
 
     const deleteDish = f => {
@@ -41,21 +43,46 @@ const Food = ({user}) => {
     };
 
     return (
-        <main>
-            <h1>Skriv vad du vill laga här</h1>
-            <input
-                type="text"
-                value={food}
-                onChange={event => setFood(event.target.value)}
-            />
+        <main className="food">
+            <div className="CollectedDishes">
+                <h3>Rätterna hittils tillagda!</h3>
+                <ul>
+                    {list.map((e,i) => (
+                        <li key={i}>{e.dish}</li>
+                    ))}
+                </ul>
+            </div>
 
-            <button onClick={onClickFood}>Lägg till maträtt!</button>
+            <div className="inputContainer">
+                <h1>Skriv vad du vill laga här</h1>
+                <input
+                    type="text"
+                    value={food}
+                    onChange={event => setFood(event.target.value)}
+                />
+                <button disabled={food ? false : true} onClick={onClickFood}>
+                    Lägg till maträtt!
+                </button>
+            </div>
+
             {list.map(e => (
-                <div key={e.id}>
-                    <img src={e.photo} alt={e.user} />
-                    <span>{e.user}</span>
-                    <span>{e.dish}</span>
-                    <button onClick={() => deleteDish(e)}>Delete</button>
+                <div className="guestList" key={e.id}>
+                    <div className="userinfo">
+                        <img src={e.photo} alt={e.user} />
+                        <h3>{e.user}</h3>
+                    </div>
+                    <div className="dish">
+                        <span>{e.dish}</span>
+                    </div>
+                    <div className="deleteBtnContainer">
+                        {e.userId === user.uid ? (
+                            <button onClick={() => deleteDish(e)}>
+                                Delete
+                            </button>
+                        ) : (
+                            "yolo"
+                        )}
+                    </div>
                 </div>
             ))}
         </main>
