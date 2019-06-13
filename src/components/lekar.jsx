@@ -21,10 +21,22 @@ const Lekar = ({user}) => {
         const data = {
             lek: lekInput,
             user: user.displayName,
+            userId: user.uid,
             photo: user.photoURL
         };
         const dbRef = db.collection("lekar").doc();
         dbRef.set(data).then(() => console.log("yo!"));
+        setLekInput("");
+    };
+
+    const taBortLekar = lek => {
+        if (lek.userId === user.uid) {
+            const dbRef = db.collection("lekar");
+            dbRef
+                .doc(lek.id)
+                .delete()
+                .then(() => console.log("deleted"));
+        }
     };
 
     return (
@@ -45,6 +57,9 @@ const Lekar = ({user}) => {
                         <li key={lek.id}>
                             <span>{lek.user}</span>
                             <span>{lek.lek}</span>
+                            <button onClick={() => taBortLekar(lek)}>
+                                Ta bort!
+                            </button>
                         </li>
                     ))}
                 </ul>

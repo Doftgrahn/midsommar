@@ -7,10 +7,12 @@ const Header = ({logOut, user}) => {
         {!user ? null :
         <header>
             <Link className="navLinks" to="/home">Home</Link>
-            <Link className="navLinks" to="/omw">RSVP</Link>
-            <Link className="navLinks" to="/food">Mat</Link>
+            <Link className="navLinks" to="/rsvp">RSVP</Link>
+            <Link className="navLinks" to="/mat">Mat</Link>
             <Link className="navLinks" to="/lekar">Lekar</Link>
             <Link className="navLinks" to="/snapsvisor">Snapsvisor</Link>
+            <Link className="navLinks" to="/randomThought">Info</Link>
+
             {user ? <button onClick={logOut}>Logga ut!</button> : null}
         </header>}</>
     );

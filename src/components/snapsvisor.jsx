@@ -28,6 +28,7 @@ const Snapsvisor = ({user}) => {
         };
         const dbRef = db.collection("visor").doc();
         dbRef.set(visaData).then(() => console.log("yoyo"));
+        setInput('');
     };
 
     const deleteVisa = song => {
