@@ -5,6 +5,7 @@ import {BrowserRouter as Router} from "react-router-dom";
 import {provider, auth} from "./shared/firebaseConfig";
 
 import Header from "./components/Header";
+import LoggedOut from "./components/LoggedOut";
 
 import Routing from "./shared/routing";
 
@@ -38,7 +39,7 @@ const App = () => {
             <Router>
                 <Header user={user} logOut={logOut} />
                 {!user ? (
-                    <button onClick={logIn}>Log In!!!!</button>
+                    <LoggedOut logIn={logIn} />
                 ) : (
                     <Routing user={user} logOut={logOut} />
                 )}

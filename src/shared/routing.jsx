@@ -5,8 +5,8 @@ import {Switch, Route} from "react-router-dom";
 import LandingPage from "../components/LandingPage";
 import Omw from "../components/Omw";
 import Food from "../components/Food";
-import Lekar from '../components/lekar';
-import Snapsvisor from '../components/snapsvisor';
+import Lekar from '../components/Lekar';
+import Snapsvisor from '../components/Snapsvisor';
 
 const Routing = ({user}, logOut) => {
     return (

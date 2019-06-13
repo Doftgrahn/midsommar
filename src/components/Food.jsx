@@ -47,15 +47,16 @@ const Food = ({user}) => {
             <div className="CollectedDishes">
                 <h3>Rätterna hittils tillagda!</h3>
                 <ul>
-                    {list.map((e,i) => (
+                    {list.map((e, i) => (
                         <li key={i}>{e.dish}</li>
                     ))}
                 </ul>
             </div>
 
             <div className="inputContainer">
-                <h1>Skriv vad du vill laga här</h1>
+                <h3>Skriv vad du vill laga här!</h3>
                 <input
+                    placeholder="rutten fisk..."
                     type="text"
                     value={food}
                     onChange={event => setFood(event.target.value)}
@@ -68,20 +69,21 @@ const Food = ({user}) => {
             {list.map(e => (
                 <div className="guestList" key={e.id}>
                     <div className="userinfo">
-                        <img src={e.photo} alt={e.user} />
+                        <div className="userPhoto">
+                            <img src={e.photo} alt={e.user} />
+                        </div>
                         <h3>{e.user}</h3>
                     </div>
                     <div className="dish">
                         <span>{e.dish}</span>
                     </div>
+
                     <div className="deleteBtnContainer">
                         {e.userId === user.uid ? (
                             <button onClick={() => deleteDish(e)}>
                                 Delete
                             </button>
-                        ) : (
-                            "yolo"
-                        )}
+                        ) : null}
                     </div>
                 </div>
             ))}

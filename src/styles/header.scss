@@ -1,5 +1,10 @@
 header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
+    flex-wrap: wrap;
     background-color: lightblue;
 
     .navLinks {
@@ -9,6 +14,8 @@ header {
     }
 
     button {
+        background: tomato;
+        border-radius: 10px;
         padding: 5px 20px;
     }
 }

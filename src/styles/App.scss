@@ -4,35 +4,50 @@
 @import './food.scss';
 
 .App {
-  text-align: center;
-}
+    text-align: center;
+    min-height: 100vh;
+    min-width: 100vh;
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
+    .logLoggedIn {
+        min-height: 100vh;
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        //align-items: center;
+        justify-content: center;
+        position: fixed;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+        .video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
 
-.App-link {
-  color: #61dafb;
-}
+            iframe {
+                width: 100vw;
+                height: 56.25vw;
+                /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+                min-height: 100vh;
+                min-width: 177.77vh;
+                /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+        button {
+            position: absolute;
+            cursor: pointer;
+            width: 100px;
+            height: 50px;
+            top: 50%;
+            margin: 0 auto;
+        }
+    }
 }
