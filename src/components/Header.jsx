@@ -1,17 +1,20 @@
 import React from "react";
 
-import {Link} from "react-router-dom";
+//import {Link} from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
-const Header = ({logOut, user}) => {
+
+const Header = ({logOut, user, match}) => {
+    console.log('test', match);
     return (<>
         {!user ? null :
         <header>
-            <Link className="navLinks" to="/home">Home</Link>
-            <Link className="navLinks" to="/rsvp">RSVP</Link>
-            <Link className="navLinks" to="/mat">Mat</Link>
-            <Link className="navLinks" to="/lekar">Lekar</Link>
-            <Link className="navLinks" to="/snapsvisor">Snapsvisor</Link>
-            <Link className="navLinks" to="/randomThought">Info</Link>
+            <NavLink className="navLinks" to="/home" activeClassName="active">Home</NavLink>
+            <NavLink className="navLinks" to="/rsvp" activeClassName="active">RSVP</NavLink>
+            <NavLink className="navLinks" to="/mat" activeClassName="active">Mat</NavLink>
+            <NavLink className="navLinks" to="/lekar" activeClassName="active">Lekar</NavLink>
+            <NavLink className="navLinks" to="/snapsvisor" activeClassName="active">Snapsvisor</NavLink>
+            <NavLink className="navLinks" to="/randomThought" activeClassName="active">Info</NavLink>
 
             {user ? <button onClick={logOut}>Logga ut!</button> : null}
         </header>}</>

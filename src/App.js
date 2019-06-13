@@ -37,7 +37,7 @@ const App = () => {
     return (
         <div className="App">
             <Router>
-                <Header user={user} logOut={logOut} />
+                <Header  user={user} logOut={logOut} />
                 {!user ? (
                     <LoggedOut logIn={logIn} />
                 ) : (
