@@ -1,0 +1,21 @@
+.landing {
+    padding: 20px;
+
+    .userinfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            font-weight: bold;
+        }
+
+        p {
+            letter-spacing: 1px;
+        }
+
+        img {
+            height: 100px;
+        }
+    }
+}
