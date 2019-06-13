@@ -11,6 +11,11 @@ header {
         margin: 20px;
         text-decoration: none;
         color: black;
+        transition: 0.4s;
+
+        &:hover {
+            color: tomato;
+        }
     }
 
     button {

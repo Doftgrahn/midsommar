@@ -4,11 +4,11 @@
 @import './food.scss';
 @import './Randomthought.scss';
 
+
 .App {
     font-size: 18px;
     text-align: center;
-    min-height: 100vh;
-    min-width: 100vh;
+    min-height: 100%;
 
     .logLoggedIn {
         min-height: 100vh;

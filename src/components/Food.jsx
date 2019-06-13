@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
-
 import {db} from "../shared/firebaseConfig";
+
+import Sverige from '../assets/sverige.jpg'
 
 const Food = ({user}) => {
     const [food, setFood] = useState("");
@@ -45,6 +46,7 @@ const Food = ({user}) => {
     return (
         <main className="food">
             <div className="CollectedDishes">
+            <img src={Sverige} alt="Sverigepic"/>
                 <h3>Rätterna hittils tillagda!</h3>
                 <ul>
                     {list.map((e, i) => (

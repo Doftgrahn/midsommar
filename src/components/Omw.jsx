@@ -38,7 +38,6 @@ const Omw = ({user}) => {
         <li key={guest.id}>{guest.name}</li>
     ));
 
-    console.log(findUser);
     return (
         <main className="omw">
             <h1>

@@ -9,6 +9,13 @@
     .CollectedDishes {
         border: 1px solid black;
 
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: 0 -140px;
+        }
+
         ul {
             display: flex;
             flex-direction: column;
