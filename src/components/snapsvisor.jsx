@@ -19,6 +19,7 @@ const Snapsvisor = ({user}) => {
         return unsubscribe;
     }, []);
 
+
     const addVisa = () => {
         if (input) {
             const visaData = {
@@ -45,23 +46,30 @@ const Snapsvisor = ({user}) => {
     };
 
     return (
-        <main>
+        <main className="visor">
+        <div className="visor-wrapper">
+        <div className="visor-wrapper-container">
             <h1>Lägg till en visa!</h1>
             <input
+                placeholder="Något vackert!"
                 type="text"
                 value={input}
                 onChange={event => setInput(event.target.value)}
             />
-            <button onClick={addVisa} disabled={input ? false: true}>Lägg till visa!</button>
+            <button onClick={addVisa} disabled={input ? false : true}>
+                Lägg till visa!
+            </button>
+            </div>
             <div className="visa-wrapper">
                 {visa.map(v => (
-                    <div key={v.id}>
+                    <div className="visaList" key={v.id}>
                         <span>{v.song}</span>
                         <button onClick={() => deleteVisa(v)}>
                             Ta bort mig!
                         </button>
                     </div>
                 ))}
+            </div>
             </div>
         </main>
     );

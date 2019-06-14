@@ -1,24 +1,59 @@
 .landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     padding: 20px;
+    background: $color-green;
 
-    .userinfo {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .landing-wrapper {
+        background: $color-white;
+        width: 50%;
+        padding: 20px;
+        border-radius: 20px;
 
         h1 {
+            color: $color-green;
+            padding: 10px 5px;
+            border-top: 5px solid $color-yellow;
             letter-spacing: 1px;
-            font-weight: bold;
+            font-weight: 800;
         }
 
-        p {line-height: 0px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+        .userinfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-        img {
-            height: 100px;
+            p {
+                color: $color-green;
+                line-height: 0;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+
+            .pic_wrapper {
+                margin:20px;
+                height: 100px;
+                position: relative;
+                width: 100px;
+                border:3px solid $color-green;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
         }
+    }
+
+    .randomInfo {
+        text-align: center;
+        padding: 20px;
+        color: $color-green;
+        font-weight: bold;
+        line-height: 1.2;
     }
 }

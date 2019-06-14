@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {db} from "../shared/firebaseConfig";
 
-import Sverige from '../assets/sverige.jpg'
+import Sverige from "../assets/sverige.jpg";
 
 const Food = ({user}) => {
     const [food, setFood] = useState("");
@@ -30,6 +30,7 @@ const Food = ({user}) => {
 
             const dbRef = db.collection("food").doc();
             dbRef.set(dishInfo).then(() => console.log("success"));
+            setFood("");
         }
     };
 
@@ -45,50 +46,55 @@ const Food = ({user}) => {
 
     return (
         <main className="food">
-            <div className="CollectedDishes">
-            <img src={Sverige} alt="Sverigepic"/>
-                <h3>Rätterna hittils tillagda!</h3>
-                <ul>
-                    {list.map((e, i) => (
-                        <li key={i}>{e.dish}</li>
-                    ))}
-                </ul>
-            </div>
-
-            <div className="inputContainer">
-                <h3>Skriv vad du vill laga här!</h3>
-                <input
-                    placeholder="rutten fisk..."
-                    type="text"
-                    value={food}
-                    onChange={event => setFood(event.target.value)}
-                />
-                <button disabled={food ? false : true} onClick={onClickFood}>
-                    Lägg till maträtt!
-                </button>
-            </div>
-
-            {list.map(e => (
-                <div className="guestList" key={e.id}>
-                    <div className="userinfo">
-                        <div className="userPhoto">
-                            <img src={e.photo} alt={e.user} />
-                        </div>
-                        <h3>{e.user}</h3>
-                    </div>
-                    <div className="dish">
-                        <span>{e.dish}</span>
-                    </div>
-
-                    <div className="deleteBtnContainer">
-                        {e.userId === user.uid ? (
-                            <button onClick={() => deleteDish(e)}>
-                                Delete
-                            </button>
-                        ) : null}
-                    </div>
+            <div className="food-wrapper">
+                <div className="CollectedDishes">
+                    <img src={Sverige} alt="Sverigepic" />
+                    <h3>Rätterna hittils tillagda!</h3>
+                    <ul>
+                        {list.map((e, i) => (
+                            <li key={i}>{e.dish}</li>
+                        ))}
+                    </ul>
                 </div>
-            ))}
+
+                <div className="inputContainer">
+                    <h3>Skriv vad du vill laga här!</h3>
+                    <input
+                        placeholder="rutten fisk..."
+                        type="text"
+                        value={food}
+                        onChange={event => setFood(event.target.value)}
+                    />
+                    <button
+                        disabled={food ? false : true}
+                        onClick={onClickFood}
+                    >
+                        Lägg till maträtt!
+                    </button>
+                </div>
+
+                {list.map(e => (
+                    <div className="guestList" key={e.id}>
+                        <div className="userinfo">
+                            <div className="userPhoto">
+                                <img src={e.photo} alt={e.user} />
+                            </div>
+                            <h3>{e.user}</h3>
+                        </div>
+                        <div className="dish">
+                            <span>{e.dish}</span>
+                        </div>
+
+                        <div className="deleteBtnContainer">
+                            {e.userId === user.uid ? (
+                                <button onClick={() => deleteDish(e)}>
+                                    Delete
+                                </button>
+                            ) : null}
+                        </div>
+                    </div>
+                ))}
+            </div>
         </main>
     );
 };

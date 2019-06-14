@@ -3,10 +3,14 @@ import React from "react";
 const LandingPage = ({user}) => {
     return (
         <main className="landing">
+    <div className="landing-wrapper">
+    <h1>Hej {user.displayName}</h1>
+
             <div className="userinfo">
-                <h1>Hej {user.displayName}</h1>
                 <p>här kommer en schleten bild på dig</p>
+                <div className="pic_wrapper">
                 <img src={user.photoURL} alt="userPhoto" />
+                </div>
             </div>
             <div className="randomInfo">
                 <p>
@@ -19,6 +23,7 @@ const LandingPage = ({user}) => {
                     Navigera i menyn ovan för att komma till mat respektive
                     annat!
                 </p>
+            </div>
             </div>
         </main>
     );

@@ -1,21 +1,57 @@
 .omw {
-    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-green;
     min-height: 100vh;
+    padding: 0 10px;
 
-    h1 {
-        margin: 0;
-        font-weight: 800;
-    }
+    &-wrapper {
+        border-radius: 20px;
+        padding: 20px;
+        background: $color-white;
+        color: $color-green;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        line-height: 1;
 
-    button {
-        padding: 10px 5px;
-    }
+        h1 {
+            border-top: 5px solid $color-yellow;
+            color: $color-green;
+            padding:10px;
+            font-weight: 800;
+        }
 
-    h2 {
-        letter-spacing: 1px;
-    }
+        button {
+            padding: 10px;
+            border-radius: 10px;
+            background: $color-yellow;
+            color: $color-green;
+            border: none;
+            cursor: pointer;
+            transition: 0.4s;
 
-    ul {
-        list-style-type: none;
+            &:hover {
+                background: $color-pink;
+                color: $color-white;
+            }
+        }
+
+        h2 {
+            letter-spacing: 1px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 20px;
+            border-radius: 20px;
+            background: $color-yellow;
+            list-style-type: none;
+        }
     }
 }

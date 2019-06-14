@@ -34,17 +34,23 @@ const RandomThought = ({user}) => {
 
     return (
         <main className="thought">
-            <h1>Här kan du ställa frågor och sånt!</h1>
-            <textarea
-                value={blogg}
-                onChange={event => setBlogg(event.target.value)}
-            />
-            <button onClick={sendPost}>Skicka!</button>
+            <div className="thought-wrapper">
+                <h1>Här kan du ställa frågor och sånt!</h1>
+                <textarea
+                    placeholder="skriv något!"
+                    value={blogg}
+                    onChange={event => setBlogg(event.target.value)}
+                />
+                <button onClick={sendPost}>Skicka!</button>
 
-            <div>
-                {post.map(p => (
-                    <p key={p.id}>{p.post}</p>
-                ))}
+                <div className="post-wrapper">
+                    {post.map(p => (
+                        <div className="p-container">
+                            <h4>{p.user}</h4>
+                            <p key={p.id}>{p.post}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </main>
     );

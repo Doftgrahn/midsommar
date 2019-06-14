@@ -42,7 +42,9 @@ const Lekar = ({user}) => {
     };
 
     return (
-        <main>
+        <main className="lekar">
+        <div className="lekar-wrapper">
+        <div className="input">
             <h1>Lekar</h1>
             <p>Förslag!</p>
             <input
@@ -52,8 +54,9 @@ const Lekar = ({user}) => {
                 onChange={event => setLekInput(event.target.value)}
             />
             <button onClick={addLekar} disabled={lekInput? false: true}>Lägg till lek</button>
+            </div>
 
-            <div>
+            <div className="lekar-wrapper">
                 <ul>
                     {lekar.map(lek => (
                         <li key={lek.id}>
@@ -66,8 +69,10 @@ const Lekar = ({user}) => {
                     ))}
                 </ul>
             </div>
+            </div>
         </main>
     );
 };
+
 
 export default Lekar;

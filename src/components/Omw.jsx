@@ -40,6 +40,7 @@ const Omw = ({user}) => {
 
     return (
         <main className="omw">
+        <div className="omw-wrapper">
             <h1>
                 {findUser
                     ? "Du har bestämt dig för att fira midsommar på bästa sätt!"
@@ -56,6 +57,7 @@ const Omw = ({user}) => {
             <h2>Dessa underbara människor kommer!</h2>
             <h3>Ångrar du dig är du en tönt</h3>
             <ul>{renderGuests}</ul>
+            </div>
         </main>
     );
 };

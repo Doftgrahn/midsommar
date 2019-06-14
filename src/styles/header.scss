@@ -5,28 +5,35 @@ header {
     align-items: center;
     padding: 10px;
     flex-wrap: wrap;
-    background-color: lightblue;
+    background: $color-yellow;
 
     .navLinks {
         margin: 20px;
         font-size: 16px;
         text-decoration: none;
-        color: black;
+        color: $color-green;
         transition: 0.4s;
 
         &:hover {
-            color: tomato;
+            color: $color-pink;
         }
     }
 
     .active {
         font-size: 18px;
-        color: blue;
+        color: $color-light-green;
     }
 
     button {
-        background: tomato;
+        background: $color-light-green;
+        color: $color-white;
         border-radius: 10px;
         padding: 5px 20px;
+        transition: 0.4s;
+
+        &:hover {
+            background: $color-yellow;
+            color: black;
+        }
     }
 }

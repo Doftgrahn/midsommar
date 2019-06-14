@@ -1,8 +1,15 @@
+@import './settings/colors.scss';
+
+
 @import './header.scss';
 @import './landingPage.scss';
 @import './omw.scss';
 @import './food.scss';
+@import './lekar.scss';
+@import './snapsvisor.scss';
 @import './Randomthought.scss';
+
+
 
 
 .App {
@@ -45,7 +52,7 @@
 
         button {
             text-align: center;
-            font-weight: bold;
+            font-weight: 800;
             border: none;
             padding: 10px 20px;
             border-radius: 10px;

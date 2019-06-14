@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const Header = ({logOut, user, match}) => {
-    console.log('test', match);
+
     return (<>
         {!user ? null :
         <header>

@@ -1,0 +1,76 @@
+.visor {
+    background: $color-green;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    &-wrapper {
+        background: $color-white;
+        width: 100%;
+        color: $color-green;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media screen and (min-width: 800px) {
+            width: 50%;
+        }
+
+        &-container {
+            padding: 20px;
+            width: 100%;
+            border-bottom: 5px solid $color-yellow;
+
+            h1 {
+                margin: 50px auto 0;
+                width: 100%;
+                padding: 20px;
+                border-top: 5px solid $color-yellow;
+                font-weight: 800;
+                letter-spacing: 1px;
+                @media screen and (min-width: 800px) {
+                    width: 50%;
+                }
+            }
+
+            input {
+                border-radius: 10px;
+                margin-left: 20px;
+                color: $color-green;
+                padding: 10px;
+                outline: none;
+                border: none;
+                border-left: 2px solid $color-green;
+                margin: 10px;
+            }
+
+            button {
+                background: $color-light-green;
+                color: $color-white;
+                padding: 5px;
+                margin-left: 10px;
+            }
+        }
+
+        .visa-wrapper {
+            width: 100%;
+            color: $color-green;
+            padding: 10px;
+
+            .visaList {
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+
+                span {
+                    margin: 5px 10px;
+                }
+            }
+        }
+    }
+}
