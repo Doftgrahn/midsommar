@@ -19,6 +19,8 @@ const Routing = ({user}, logOut) => {
             <Route path="/lekar" render={() => <Lekar user={user} />} />
             <Route path="/snapsvisor" render={() => <Snapsvisor user={user} />} />
             <Route path="/RandomThought" render={() => <RandomThought user={user} />} />
+            <Route path="**" render={() => <LandingPage user={user} />} />
+
 
         </Switch>
     );

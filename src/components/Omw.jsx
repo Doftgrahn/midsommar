@@ -35,7 +35,7 @@ const Omw = ({user}) => {
     };
 
     const renderGuests = guests.map(guest => (
-        <li key={guest.id}>{guest.name}</li>
+        <li key={guest.id}> <img src={guest.photo} alt="userPhoto"/> <p>{guest.name}</p></li>
     ));
 
     return (

@@ -18,7 +18,7 @@ const LandingPage = ({user}) => {
                     laga till midsommar 2019! du kan även säga om du vill komma
                     eller inte!
                 </p>
-                <p>Den här sidan är totalt onödig!</p>
+                <p>Den här sidan är totalt onödig! och jag kommer verkligen spara all information som ges till mig när du loggar in. mohahaahah! (stäm mig inte)</p>
                 <p>
                     Navigera i menyn ovan för att komma till mat respektive
                     annat!

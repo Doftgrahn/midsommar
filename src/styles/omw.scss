@@ -20,7 +20,7 @@
         h1 {
             border-top: 5px solid $color-yellow;
             color: $color-green;
-            padding:10px;
+            padding: 10px;
             font-weight: 800;
         }
 
@@ -52,6 +52,22 @@
             border-radius: 20px;
             background: $color-yellow;
             list-style-type: none;
+
+            li {
+                padding:20px;
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                border-bottom: 5px solid $color-green;
+
+                img {
+                    border-radius: 50%;
+                }
+
+                p {
+                    margin-left: 20px;
+                }
+            }
         }
     }
 }
