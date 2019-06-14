@@ -16,6 +16,20 @@
 
         .input {
             padding: 20px;
+            width: 100%;
+            background: $color-white;
+
+            .midsommar {
+                width: 100%;
+                height: 100%;
+
+
+                img {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                }
+            }
 
             h1 {
                 border-top: 5px solid $color-yellow;
@@ -58,20 +72,25 @@
 
             li {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                flex-wrap: nowrap;
+                //flex-wrap: wrap;
                 border-bottom: 5px solid $color-yellow;
                 padding: 10px;
+                @media screen and (min-width: 800px) {
+                    flex-direction: row;
+                }
 
                 span {
+                    width: 100%;
                     font-weight: bold;
                     display: block;
-                    margin-left: 10px;
+                    margin: 5px;
                 }
 
                 button {
+                    border: none;
                     border-radius: 10px;
                     background: $color-green;
                     color: $color-white;

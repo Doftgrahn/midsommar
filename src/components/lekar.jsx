@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {db} from "../shared/firebaseConfig";
 
+import Midsommar from "../assets/midsommar.jpg";
+
 const Lekar = ({user}) => {
     const [lekInput, setLekInput] = useState("");
     const [lekar, setLekar] = useState([]);
@@ -45,14 +47,22 @@ const Lekar = ({user}) => {
         <main className="lekar">
             <div className="lekar-wrapper">
                 <div className="input">
+                    <div className="midsommar">
+                        <img src={Midsommar} alt="" />
+                    </div>
                     <h1>Lekar</h1>
                     <p>Förslag!</p>
                     <input
                         placeholder="lägg till lek..."
                         type="text"
                         value={lekInput}
+                        maxLength="20"
                         onChange={event => setLekInput(event.target.value)}
                     />
+                    <span>
+                        {lekInput.length}
+                        /20
+                    </span>
                     <button
                         onClick={addLekar}
                         disabled={lekInput ? false : true}
@@ -67,9 +77,13 @@ const Lekar = ({user}) => {
                             <li key={lek.id}>
                                 <span>{lek.user}</span>
                                 <span>{lek.lek}</span>
-                                <button onClick={() => taBortLekar(lek)}>
-                                    Ta bort!
-                                </button>
+                                {lek.userId === user.uid ? (
+                                    <button onClick={() => taBortLekar(lek)}>
+                                        Ta bort!
+                                    </button>
+                                ) : (
+                                    <p>{null}</p>
+                                )}
                             </li>
                         ))}
                     </ul>

@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 
 import {db} from "../shared/firebaseConfig";
 
+import Smarholmen from '../assets/smarholmen.jpg';
+
 const Omw = ({user}) => {
     const [guests, setGuests] = useState([]);
 
@@ -40,6 +42,7 @@ const Omw = ({user}) => {
 
     return (
         <main className="omw">
+        <div className="smarolmen"><img src={Smarholmen} alt=""/></div>
         <div className="omw-wrapper">
             <h1>
                 {findUser

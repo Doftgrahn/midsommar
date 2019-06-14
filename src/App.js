@@ -4,7 +4,7 @@ import {BrowserRouter as Router} from "react-router-dom";
 
 import {provider, auth} from "./shared/firebaseConfig";
 
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import LoggedOut from "./components/LoggedOut";
 
 import Routing from "./shared/routing";
@@ -21,7 +21,7 @@ const App = () => {
                 : localStorage.removeItem("user");
         });
     });
-
+    
     const logIn = () => {
         auth.signInWithPopup(provider).then(({user}) => {
             setUser(user);

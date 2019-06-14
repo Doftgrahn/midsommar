@@ -2,6 +2,7 @@
 
 
 @import './header.scss';
+@import './parts/Hamburger.scss';
 @import './landingPage.scss';
 @import './omw.scss';
 @import './food.scss';
@@ -13,6 +14,7 @@
 
 
 .App {
+    overflow-x:hidden;
     font-size: 18px;
     text-align: center;
     min-height: 100%;
@@ -56,8 +58,10 @@
             border: none;
             padding: 10px 20px;
             border-radius: 10px;
-            background-color: #e5765f;
+            background-color: $color-green;
+            color:$color-white;
             position: absolute;
+            border:none;
             cursor: pointer;
             top: 50%;
             margin: 0 auto;

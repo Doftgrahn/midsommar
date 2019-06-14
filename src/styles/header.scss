@@ -1,39 +1,121 @@
 header {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    //justify-content: center;
     align-items: center;
-    padding: 10px;
-    flex-wrap: wrap;
+    padding: 0 10px;
+    //flex-wrap: wrap;
+    //line-height: 0.4;
     background: $color-yellow;
+    overflow: hidden;
+    @media screen and (min-width: 800px) {
+        flex-direction: row;
+    }
 
-    .navLinks {
-        margin: 20px;
-        font-size: 16px;
-        text-decoration: none;
-        color: $color-green;
-        transition: 0.4s;
+    h1 {
+        margin: 0;
+        font-size: 20px;
+    }
 
-        &:hover {
-            color: $color-pink;
+    .nav-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0;
+        z-index: 10;
+        overflow: hidden;
+        @media screen and (min-width: 800px) {
+            justify-content: center;
+            align-items: center;
         }
-    }
 
-    .active {
-        font-size: 18px;
-        color: $color-light-green;
-    }
-
-    button {
-        background: $color-light-green;
-        color: $color-white;
-        border-radius: 10px;
-        padding: 5px 20px;
-        transition: 0.4s;
-
-        &:hover {
+        .b-header__container {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
             background: $color-yellow;
-            color: black;
+            padding: 80px 20px 50px;
+            top: 0;
+            right: 100%;
+            transition: 0.4s ease;
+            min-height: 120vh;
+            margin:0;
+            @media screen and (min-width: 800px) {
+                width: 100%;
+                position: static;
+                background: $color-yellow;
+                min-height: 10px;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            &--active {
+                right: 0;
+            }
+
+            .linkWrapper {
+                margin-top: 80px;
+                overflow: hidden;
+                position: absolute;
+                @media screen and (min-width: 800px) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    position: static;
+                }
+
+                .navLinks {
+                    overflow: hidden;
+                    font-size: 30px;
+                    display: flex;
+                    justify-content: center;
+                    padding: 10px 120px 30px;
+                    //margin-top: 0px;
+                    //font-size: 18px;
+                    text-decoration: none;
+                    color: $color-green;
+                    transition: 0.4s;
+                    @media screen and (min-width: 800px) {
+                        width: 400px;
+                        font-size: 18px;
+                        display: inline-flex;
+                        flex-wrap: wrap;
+                        padding: 0;
+                    }
+
+                    &:hover {
+                        color: $color-pink;
+                    }
+                }
+            }
+
+            .active {
+                //font-size: 18px;
+                color: $color-light-green;
+            }
+        }
+
+        button {
+            background: $color-light-green;
+            color: $color-white;
+            border-radius: 10px;
+            padding: 5px 20px;
+            transition: 0.4s;
+
+            &:hover {
+                background: $color-yellow;
+                color: black;
+            }
         }
     }
 }

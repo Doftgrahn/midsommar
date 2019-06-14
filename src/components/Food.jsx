@@ -7,7 +7,6 @@ const Food = ({user}) => {
     const [food, setFood] = useState("");
     const [list, setList] = useState([]);
 
-
     useEffect(() => {
         const dbRef = db.collection("food");
         let unsubscribe = dbRef.onSnapshot(snapshot => {
@@ -62,10 +61,15 @@ const Food = ({user}) => {
                     <h3>Skriv vad du vill laga här!</h3>
                     <input
                         placeholder="rutten fisk..."
+                        maxLength="20"
                         type="text"
                         value={food}
                         onChange={event => setFood(event.target.value)}
                     />
+                    <span>
+                        {food.length}
+                        /20
+                    </span>
                     <button
                         disabled={food ? false : true}
                         onClick={onClickFood}

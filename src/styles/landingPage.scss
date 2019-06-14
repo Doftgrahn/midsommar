@@ -9,6 +9,9 @@
 
     .landing-wrapper {
         background: $color-white;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         width: 100%;
         padding: 20px;
         border-radius: 20px;
@@ -30,11 +33,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
 
             p {
+
                 color: $color-green;
-                line-height: 0;
+                line-height: 1;
                 font-weight: bold;
+                margin:0;
+                word-break: break-all;
+
                 //letter-spacing: 1px;
             }
 

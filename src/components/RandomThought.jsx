@@ -58,9 +58,9 @@ const RandomThought = ({user}) => {
                         <div key={p.id} className="p-container">
                             <h4>{p.user}</h4>
                             <p key={p.id}>{p.post}</p>
-                            <button onClick={() => taBortmig(p)}>
+                            {p.userId === user.uid ?  <button onClick={() => taBortmig(p)}>
                                 ta bort mig!
-                            </button>
+                            </button> : null}
                         </div>
                     ))}
                 </div>
