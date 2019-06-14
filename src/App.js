@@ -13,6 +13,7 @@ const App = () => {
     const [user, setUser] = useState(
         null || JSON.parse(localStorage.getItem("user"))
     );
+    console.log(user);
 
     useEffect(() => {
         auth.onAuthStateChanged(user => {
@@ -21,7 +22,7 @@ const App = () => {
                 : localStorage.removeItem("user");
         });
     });
-    
+
     const logIn = () => {
         auth.signInWithPopup(provider).then(({user}) => {
             setUser(user);

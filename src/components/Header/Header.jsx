@@ -21,11 +21,20 @@ const Header = ({logOut, user}) => {
         <>
             {!user ? null : (
                 <header>
-                <h1>Midsommar 2019</h1>
+                    <h1>Midsommar 2019</h1>
                     <div className="nav-wrapper">
-                        <NavLinks toggle={toggle} toggleOff={toggleOff} logOut={logOut} />
+                        <NavLinks
+                            toggle={toggle}
+                            toggleOff={toggleOff}
+                            logOut={logOut}
+                        />
                     </div>
-                    <Hamburger toggleState={toggleState} toggle={toggle} user={user} logOut={logOut} />
+                    <Hamburger
+                        toggleState={toggleState}
+                        toggle={toggle}
+                        user={user}
+                        logOut={logOut}
+                    />
                 </header>
             )}
         </>

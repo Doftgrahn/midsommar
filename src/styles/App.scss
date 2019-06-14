@@ -1,6 +1,4 @@
 @import './settings/colors.scss';
-
-
 @import './header.scss';
 @import './parts/Hamburger.scss';
 @import './landingPage.scss';
@@ -10,11 +8,8 @@
 @import './snapsvisor.scss';
 @import './Randomthought.scss';
 
-
-
-
 .App {
-    overflow-x:hidden;
+    overflow-x: hidden;
     font-size: 18px;
     text-align: center;
     min-height: 100%;
@@ -59,9 +54,9 @@
             padding: 10px 20px;
             border-radius: 10px;
             background-color: $color-green;
-            color:$color-white;
+            color: $color-white;
             position: absolute;
-            border:none;
+            border: none;
             cursor: pointer;
             top: 50%;
             margin: 0 auto;

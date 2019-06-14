@@ -1,11 +1,11 @@
 .omw {
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: $color-green;
     min-height: 100vh;
     padding: 20px;
+    background-color: $color-green;
 
     .smarolmen {
         width: 100%;
@@ -23,34 +23,34 @@
     }
 
     &-wrapper {
-        border-radius: 20px;
-        padding: 20px;
-        background: $color-white;
-        color: $color-green;
+        line-height: 1;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        line-height: 1;
+        padding: 20px;
+        color: $color-green;
+        border-radius: 20px;
+        background: $color-white;
 
         h1 {
-            border-top: 5px solid $color-yellow;
-            color: $color-green;
-            padding: 10px;
             font-weight: 800;
+            padding: 10px;
+            color: $color-green;
+            border-top: 5px solid $color-yellow;
         }
 
         button {
             padding: 10px;
-            border-radius: 10px;
-            background: $color-yellow;
-            color: $color-green;
-            border: none;
             cursor: pointer;
             transition: 0.4s;
+            color: $color-green;
+            border: none;
+            border-radius: 10px;
+            background: $color-yellow;
 
             &:hover {
-                background: $color-pink;
                 color: $color-white;
+                background: $color-pink;
             }
         }
 
@@ -60,19 +60,19 @@
 
         ul {
             display: flex;
+            align-items: flex-start;
             flex-direction: column;
             justify-content: flex-start;
-            align-items: flex-start;
             padding: 20px;
+            list-style-type: none;
             border-radius: 20px;
             background: $color-yellow;
-            list-style-type: none;
 
             li {
-                padding: 20px;
                 display: flex;
-                width: 100%;
                 flex-direction: row;
+                width: 100%;
+                padding: 20px;
                 border-bottom: 5px solid $color-green;
 
                 img {
