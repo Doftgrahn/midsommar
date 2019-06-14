@@ -2,26 +2,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    //justify-content: center;
     min-height: 100vh;
     padding: 20px;
     background: $color-green;
 
     .landing-wrapper {
         background: $color-white;
-        width: 50%;
+        width: 100%;
         padding: 20px;
         border-radius: 20px;
+        @media screen and (min-width: 800px) {
+            width: 50%;
+        }
 
         h1 {
             color: $color-green;
             padding: 10px 5px;
             border-top: 5px solid $color-yellow;
-            letter-spacing: 1px;
+            //letter-spacing: 1px;
             font-weight: 800;
         }
 
         .userinfo {
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -31,15 +35,15 @@
                 color: $color-green;
                 line-height: 0;
                 font-weight: bold;
-                letter-spacing: 1px;
+                //letter-spacing: 1px;
             }
 
             .pic_wrapper {
-                margin:20px;
+                margin: 20px;
                 height: 100px;
                 position: relative;
                 width: 100px;
-                border:3px solid $color-green;
+                border: 3px solid $color-green;
 
                 img {
                     height: 100%;
@@ -50,6 +54,7 @@
     }
 
     .randomInfo {
+        width: 100%;
         text-align: center;
         padding: 20px;
         color: $color-green;

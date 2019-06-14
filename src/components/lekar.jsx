@@ -43,36 +43,40 @@ const Lekar = ({user}) => {
 
     return (
         <main className="lekar">
-        <div className="lekar-wrapper">
-        <div className="input">
-            <h1>Lekar</h1>
-            <p>Förslag!</p>
-            <input
-                placeholder="lägg till lek..."
-                type="text"
-                value={lekInput}
-                onChange={event => setLekInput(event.target.value)}
-            />
-            <button onClick={addLekar} disabled={lekInput? false: true}>Lägg till lek</button>
-            </div>
-
             <div className="lekar-wrapper">
-                <ul>
-                    {lekar.map(lek => (
-                        <li key={lek.id}>
-                            <span>{lek.user}</span>
-                            <span>{lek.lek}</span>
-                            <button onClick={() => taBortLekar(lek)}>
-                                Ta bort!
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+                <div className="input">
+                    <h1>Lekar</h1>
+                    <p>Förslag!</p>
+                    <input
+                        placeholder="lägg till lek..."
+                        type="text"
+                        value={lekInput}
+                        onChange={event => setLekInput(event.target.value)}
+                    />
+                    <button
+                        onClick={addLekar}
+                        disabled={lekInput ? false : true}
+                    >
+                        Lägg till lek
+                    </button>
+                </div>
+
+                <div className="lekar-wrapper">
+                    <ul>
+                        {lekar.map(lek => (
+                            <li key={lek.id}>
+                                <span>{lek.user}</span>
+                                <span>{lek.lek}</span>
+                                <button onClick={() => taBortLekar(lek)}>
+                                    Ta bort!
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </main>
     );
 };
-
 
 export default Lekar;

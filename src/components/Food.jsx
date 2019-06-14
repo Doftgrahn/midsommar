@@ -7,6 +7,7 @@ const Food = ({user}) => {
     const [food, setFood] = useState("");
     const [list, setList] = useState([]);
 
+
     useEffect(() => {
         const dbRef = db.collection("food");
         let unsubscribe = dbRef.onSnapshot(snapshot => {
@@ -79,10 +80,10 @@ const Food = ({user}) => {
                             <div className="userPhoto">
                                 <img src={e.photo} alt={e.user} />
                             </div>
-                            <h3>{e.user}</h3>
+                            <h4>{e.user}</h4>
                         </div>
                         <div className="dish">
-                            <span>{e.dish}</span>
+                            <p>{e.dish}</p>
                         </div>
 
                         <div className="deleteBtnContainer">

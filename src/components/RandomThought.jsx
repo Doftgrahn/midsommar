@@ -32,6 +32,16 @@ const RandomThought = ({user}) => {
         }
     };
 
+    const taBortmig = post => {
+        if (post.userId === user.uid) {
+            const dbRef = db.collection("blogg");
+            dbRef
+                .doc(post.id)
+                .delete()
+                .then(() => console.log("deleted"));
+        }
+    };
+
     return (
         <main className="thought">
             <div className="thought-wrapper">
@@ -45,9 +55,12 @@ const RandomThought = ({user}) => {
 
                 <div className="post-wrapper">
                     {post.map(p => (
-                        <div className="p-container">
+                        <div key={p.id} className="p-container">
                             <h4>{p.user}</h4>
                             <p key={p.id}>{p.post}</p>
+                            <button onClick={() => taBortmig(p)}>
+                                ta bort mig!
+                            </button>
                         </div>
                     ))}
                 </div>
